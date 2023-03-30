@@ -39,21 +39,7 @@ public class CoffeeMachine {
 	 */
 	public Drink prepare(DrinkType type) {
 		//создаем объект напитка
-		Drink drink = null;
-		switch (type) {
-			case ESPRESSO:
-				drink = new Espresso();
-				break;
-			case LATTE:
-				drink = new Latte();
-				break;
-			case CAPPUCCINO:
-				drink = new Cappuccino();
-				break;
-			case AMERICANO:
-				drink = new Americano();
-				break;
-		}
+		Drink drink = type.create();
 
 		//уменьшаем количество ингредиентов
 		StringBuilder errors = recalculateBalance(drink);
@@ -83,25 +69,12 @@ public class CoffeeMachine {
 	 * @return Список ошибок, если были при пересчете.
 	 */
 	private StringBuilder recalculateBalance(Drink drink) {
-		StringBuilder errors = new StringBuilder();
 		if (drink == null) {
-			errors.append("Не инициализирован напиток; ");
-			return errors;
+			return new StringBuilder("Не инициализирован напиток; ");
 		}
 
 		//проверяем остатки
-		if (coffeeVolume - drink.getCoffeeVolume() < 0) {
-			errors.append("Не хватает кофе для приготовления; ");
-		}
-		if (milkVolume - drink.getMilkVolume() < 0) {
-			errors.append("Не хватает молока для приготовления; ");
-		}
-		if (waterVolume - drink.getWaterVolume() < 0) {
-			errors.append("Не хватает воды для приготовления; ");
-		}
-		if (sugarVolume - drink.getSugarVolume() < 0) {
-			errors.append("Не хватает сахара для приготовления; ");
-		}
+		StringBuilder errors = validateDrink(drink);
 
 		//обновляем остатки
 		if (errors.length() == 0) {
@@ -112,5 +85,27 @@ public class CoffeeMachine {
 			income += drink.getPrice();
 		}
 		return errors;
+	}
+
+	/**
+	 * Выполнить проверку наличие ингредиентов для напитка.
+	 * @param drink Напиток, для которого нужно проверить ингредиенты.
+	 * @return Список недостающих ингредиентов, которых не хватает. Пустой список означает, что ингредиентов хватает.
+	 */
+	private StringBuilder validateDrink(Drink drink) {
+		StringBuilder result = new StringBuilder();
+		if (coffeeVolume - drink.getCoffeeVolume() < 0) {
+			result.append("Не хватает кофе для приготовления; ");
+		}
+		if (milkVolume - drink.getMilkVolume() < 0) {
+			result.append("Не хватает молока для приготовления; ");
+		}
+		if (waterVolume - drink.getWaterVolume() < 0) {
+			result.append("Не хватает воды для приготовления; ");
+		}
+		if (sugarVolume - drink.getSugarVolume() < 0) {
+			result.append("Не хватает сахара для приготовления; ");
+		}
+		return result;
 	}
 }
