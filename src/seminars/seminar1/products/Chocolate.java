@@ -1,4 +1,4 @@
-package products;
+package seminars.seminar1.products;
 
 public class Chocolate extends Product {
 

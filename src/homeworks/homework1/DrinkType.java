@@ -1,6 +1,6 @@
-package homework1;
+package homeworks.homework1;
 
-import homework1.drinks.*;
+import homeworks.homework1.drinks.*;
 
 /** Варианты напитков для кофемашины */
 public enum DrinkType implements DrinkFactory {

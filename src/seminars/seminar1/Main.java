@@ -1,9 +1,11 @@
-import homework1.Candy;
-import products.Chocolate;
-import products.ConcentrateMilk;
-import products.Milk;
-import products.Product;
-import homework1.Tea;
+package seminars.seminar1;
+
+import homeworks.homework1.Candy;
+import seminars.seminar1.products.Chocolate;
+import seminars.seminar1.products.ConcentrateMilk;
+import seminars.seminar1.products.Milk;
+import seminars.seminar1.products.Product;
+import homeworks.homework1.Tea;
 
 public class Main {
     public static void main(String[] args) {

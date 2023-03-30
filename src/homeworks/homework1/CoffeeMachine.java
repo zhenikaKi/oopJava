@@ -1,10 +1,6 @@
-package homework1;
+package homeworks.homework1;
 
-import homework1.drinks.Americano;
-import homework1.drinks.Cappuccino;
-import homework1.drinks.Drink;
-import homework1.drinks.Espresso;
-import homework1.drinks.Latte;
+import homeworks.homework1.drinks.Drink;
 
 /** Кофемашина с напитками */
 public class CoffeeMachine {

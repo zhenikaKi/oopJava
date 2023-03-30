@@ -1,6 +1,6 @@
-package homework1.drinks;
+package homeworks.homework1.drinks;
 
-import homework1.DrinkType;
+import homeworks.homework1.DrinkType;
 
 public class Cappuccino extends Espresso {
 

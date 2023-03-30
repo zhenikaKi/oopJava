@@ -1,4 +1,4 @@
-package homework1.drinks;
+package homeworks.homework1.drinks;
 
 /** Основной класс с описанием напитка */
 public abstract class Drink {

@@ -1,6 +1,6 @@
-package homework1;
+package homeworks.homework1;
 
-import products.Product;
+import seminars.seminar1.products.Product;
 
 public class Candy extends Product
 {

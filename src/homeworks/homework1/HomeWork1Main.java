@@ -1,8 +1,8 @@
-package homework1;
+package homeworks.homework1;
 
 import java.util.Random;
 
-import homework1.drinks.Drink;
+import homeworks.homework1.drinks.Drink;
 
 /**
  * Создать торговый кофейный автомат, напитки в автомате должны содержать следующие данные:

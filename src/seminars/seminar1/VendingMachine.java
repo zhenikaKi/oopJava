@@ -1,7 +1,9 @@
+package seminars.seminar1;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import products.Product;
+import seminars.seminar1.products.Product;
 
 public class VendingMachine {
     private List<Product> products = new ArrayList<>();
