@@ -1,7 +1,9 @@
+import homework1.Candy;
 import products.Chocolate;
 import products.ConcentrateMilk;
 import products.Milk;
 import products.Product;
+import homework1.Tea;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +12,9 @@ public class Main {
                 .addProduct(new Milk("moloko", 50, 2))
                 .addProduct(new Product("cheese", 100.2, 5))
                 .addProduct(new ConcentrateMilk("Советская", 150, 1))
-                .addProduct(new Chocolate("Аленка", 35.20,3, "Ореховый"));
+                .addProduct(new Chocolate("Аленка", 35.20,3, "Ореховый"))
+                .addProduct(new Tea("БрукБонд", 74,10, "с лимоном"))
+                .addProduct(new Candy("Сникерс", 35,30));
 
         System.out.println("До продажи");
         System.out.println(mart);
