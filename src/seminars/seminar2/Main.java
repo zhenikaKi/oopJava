@@ -1,5 +1,8 @@
 package seminars.seminar2;
 
+import homeworks.homework2.BoneFish;
+import homeworks.homework2.CartilaginousFish;
+
 public class Main {
     public static void main(String[] args) {
         Zoo zoo = new Zoo();
@@ -10,6 +13,8 @@ public class Main {
         zoo.addAnimal(new Goat("Маня"));
         zoo.addAnimal(new Bat("Микки"));
         zoo.addAnimal(new Bear("Косолапыч", 61));
+        zoo.addAnimal(new BoneFish("Лосось", 30));
+        zoo.addAnimal(new CartilaginousFish("Акула", 52));
 
         zoo.noise();
         zoo.showAll();
@@ -19,6 +24,9 @@ public class Main {
         System.out.println();
         System.out.println("Чемпион по полёту: ");
         System.out.println(zoo.championByFly());
+        System.out.println();
+        System.out.println("Чемпион по скорости плавания: ");
+        System.out.println(zoo.championBySwimSpeed());
     }
 
 }

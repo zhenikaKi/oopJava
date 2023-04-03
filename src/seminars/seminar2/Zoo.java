@@ -1,5 +1,7 @@
 package seminars.seminar2;
 
+import homeworks.homework2.Swimable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,5 +75,18 @@ public class Zoo {
             }
         }
         return (Animal)champ;
+    }
+
+    /** Найти самого быстроплавающего животного */
+    public Animal championBySwimSpeed() {
+        Animal result = null;
+        for (Animal animal: animals) {
+            if (animal instanceof Swimable
+                    && (result == null || ((Swimable)animal).getSpeed() > ((Swimable)result).getSpeed())) {
+                result = animal;
+            }
+        }
+
+        return result;
     }
 }
