@@ -1,8 +1,10 @@
 package seminars.seminar4;
 
-public class Thief extends Warrior<Knife>{
-    public Thief(String name, int hp, Knife weapon) {
-        super(name, hp, weapon);
+import homeworks.homework4.RoundShield;
+
+public class Thief extends Warrior<Knife, RoundShield>{
+    public Thief(String name, int hp, Knife weapon, RoundShield shield) {
+        super(name, hp, weapon, shield);
     }
 
     @Override

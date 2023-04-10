@@ -1,5 +1,7 @@
 package seminars.seminar4;
 
+import homeworks.homework4.Shield;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -24,6 +26,7 @@ public class Team<T extends Personage> implements Iterable<T>{
                     .append("\n");
         }
         res.append(String.format("Максимальная дальность: %d", maxRange()));
+        res.append(String.format("\nМинимальный щит: %d", gitMinShield()));
         return res.toString();
     }
 
@@ -38,5 +41,22 @@ public class Team<T extends Personage> implements Iterable<T>{
             }
         }
         return max;
+    }
+
+    public Integer gitMinShield () {
+        Integer min = null;
+        for (T pers: this) {
+            if (pers instanceof Warrior) {
+                Integer protector =  ((Warrior<?, ?>) pers).getShield().getProtection();
+                if (protector == null) {
+                    continue;
+                }
+
+                if(min == null || protector < min){
+                    min = protector;
+                }
+            }
+        }
+        return min;
     }
 }
