@@ -1,3 +1,5 @@
+package seminars.seminar4;
+
 public abstract class Personage {
     private String name;
     private int hp;

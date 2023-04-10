@@ -1,3 +1,5 @@
+package seminars.seminar4;
+
 public abstract class Throwing implements Weapon{
     int range;
 

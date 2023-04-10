@@ -1,3 +1,5 @@
+package seminars.seminar4;
+
 public class Archer extends Warrior<Throwing>{
     public Archer(String name, int hp, Throwing weapon) {
         super(name, hp, weapon);

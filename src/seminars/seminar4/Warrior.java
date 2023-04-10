@@ -1,3 +1,5 @@
+package seminars.seminar4;
+
 import java.util.Random;
 
 public abstract class Warrior<T extends Weapon> extends Personage{

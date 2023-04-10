@@ -1,3 +1,5 @@
+package seminars.seminar4;
+
 public class Battle {
     private Warrior attacker;
     private Warrior defender;

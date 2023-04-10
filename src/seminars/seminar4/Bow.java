@@ -1,3 +1,5 @@
+package seminars.seminar4;
+
 public class Bow extends Throwing{
 private String name;
     public Bow(int range) {
