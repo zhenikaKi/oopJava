@@ -1,7 +1,7 @@
-package personal.controllers;
+package seminars.seminar5.personal.controllers;
 
-import personal.model.Repository;
-import personal.model.User;
+import seminars.seminar5.personal.model.Repository;
+import seminars.seminar5.personal.model.User;
 
 import java.util.List;
 

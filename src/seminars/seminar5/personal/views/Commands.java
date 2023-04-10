@@ -1,4 +1,4 @@
-package personal.views;
+package seminars.seminar5.personal.views;
 
 public enum Commands {
     NONE,

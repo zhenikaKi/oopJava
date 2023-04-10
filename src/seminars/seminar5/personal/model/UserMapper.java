@@ -1,4 +1,4 @@
-package personal.model;
+package seminars.seminar5.personal.model;
 
 public class UserMapper {
     public String map(User user) {

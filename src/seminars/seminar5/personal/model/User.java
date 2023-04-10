@@ -1,4 +1,4 @@
-package personal.model;
+package seminars.seminar5.personal.model;
 
 public class User {
     private String id = "";

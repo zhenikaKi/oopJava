@@ -1,4 +1,4 @@
-package personal.model;
+package seminars.seminar5.personal.model;
 
 import java.util.ArrayList;
 import java.util.List;

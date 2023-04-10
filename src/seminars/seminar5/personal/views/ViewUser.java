@@ -1,7 +1,7 @@
-package personal.views;
+package seminars.seminar5.personal.views;
 
-import personal.controllers.UserController;
-import personal.model.User;
+import seminars.seminar5.personal.controllers.UserController;
+import seminars.seminar5.personal.model.User;
 
 import java.util.Scanner;
 
