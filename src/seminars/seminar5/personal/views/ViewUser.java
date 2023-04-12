@@ -19,7 +19,8 @@ public class ViewUser {
 
         while (true) {
             try {
-                String command = prompt("Введите команду: ");
+                String commandList = Commands.getList();
+                String command = prompt(String.format("Введите команду (%s): ", commandList));
                 com = Commands.valueOf(command.toUpperCase());
 
                 if (com == Commands.EXIT) return;
@@ -37,15 +38,24 @@ public class ViewUser {
                     case UPDATE:
                         updateUser();
                         break;
+                    case DELETE:
+                        deleteUser();
+                        break;
                 }
             } catch (Exception e) {
+                e.printStackTrace();
                 System.out.println(e.getMessage());
             }
         }
     }
 
+    private void deleteUser() throws Exception {
+        long id = Long.parseLong(prompt("Идентификатор пользователя: "));
+        userController.deleteUser(id);
+    }
+
     private void updateUser() throws Exception {
-        String id = prompt("Идентификатор пользователя: ");
+        long id = Long.parseLong(prompt("Идентификатор пользователя: "));
         User user = userController.readUser(id);
         System.out.println(user);
         System.out.println();
@@ -63,7 +73,7 @@ public class ViewUser {
     }
 
     private void read() throws Exception {
-        String id = prompt("Идентификатор пользователя: ");
+        long id = Long.parseLong(prompt("Идентификатор пользователя: "));
         User user = userController.readUser(id);
         System.out.println(user);
     }

@@ -1,7 +1,7 @@
 package seminars.seminar5.personal.model;
 
 public class User {
-    private String id = "";
+    private long id = 0;
     private String firstName;
     private String lastName;
     private String phone;
@@ -12,16 +12,16 @@ public class User {
         this.phone = phone;
     }
 
-    public User(String id, String firstName, String lastName, String phone) {
+    public User(long id, String firstName, String lastName, String phone) {
         this(firstName, lastName, phone);
         this.id = id;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -51,6 +51,6 @@ public class User {
 
     @Override
     public String toString() {
-        return String.format("Идентафикатор: %s\nИмя: %s,\nФамилия: %s,\nТелефон: %s", id, firstName, lastName, phone);
+        return String.format("Идентификатор: %d\nИмя: %s,\nФамилия: %s,\nТелефон: %s", id, firstName, lastName, phone);
     }
 }

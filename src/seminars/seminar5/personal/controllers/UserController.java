@@ -16,15 +16,23 @@ public class UserController {
 
     public void saveUser(User user) {
         valid.validate(user);
-        repository.CreateUser(user);
+        repository.createUser(user);
     }
 
-    public User readUser(String userId) throws Exception {
-        List<User> users = repository.getAllUsers();
-        for (User user : users) {
-            if (user.getId().equals(userId)) {
-                return user;
-            }
+    public User readUser(long userId) throws Exception {
+        User user = repository.getUser(userId);
+        if (user != null) {
+            return user;
+        }
+
+        throw new Exception("User not found");
+    }
+
+    public void deleteUser(long userId) throws Exception {
+        User user = repository.getUser(userId);
+        if (user != null) {
+            repository.deleteUser(userId);
+            return;
         }
 
         throw new Exception("User not found");
