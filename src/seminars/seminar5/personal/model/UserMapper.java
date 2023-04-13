@@ -1,10 +1,5 @@
 package seminars.seminar5.personal.model;
 
-import homeworks.homework5.model.SqlHelper;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 public class UserMapper {
 
     private final String fieldSeparator;
@@ -43,19 +38,5 @@ public class UserMapper {
     public User map(String line) {
         String[] lines = line.split(fieldSeparator);
         return new User(Long.parseLong(lines[0]), lines[1], lines[2], lines[3]);
-    }
-
-    /**
-     * Преобразовать результат запроса к пользователю.
-     * @param resultSet Результат запроса.
-     * @return Пользователь.
-     */
-    public User map(ResultSet resultSet) throws SQLException {
-        return new User(
-                resultSet.getLong(SqlHelper.COLUMN_ID),
-                resultSet.getString(SqlHelper.COLUMN_FIRST_NAME),
-                resultSet.getString(SqlHelper.COLUMN_LAST_NAME),
-                resultSet.getString(SqlHelper.COLUMN_PHONE)
-        );
     }
 }

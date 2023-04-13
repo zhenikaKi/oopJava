@@ -2,7 +2,6 @@ package homeworks.homework5.model;
 
 import seminars.seminar5.personal.model.DictionaryStorage;
 import seminars.seminar5.personal.model.User;
-import seminars.seminar5.personal.model.UserMapper;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,7 +13,7 @@ public class DictionaryStorageDb implements DictionaryStorage {
     private final Connection connection;
     private final Statement statement;
     private final SqlHelper sqlHelper;
-    private final UserMapper userMapper;
+    private final UserSqlMapper userMapper;
 
     /**
      * Инициализация хранилища.
@@ -23,7 +22,7 @@ public class DictionaryStorageDb implements DictionaryStorage {
     public DictionaryStorageDb(String dbName) {
         try {
             sqlHelper = new SqlHelper();
-            userMapper = new UserMapper();
+            userMapper = new UserSqlMapper();
 
             DriverManager.registerDriver(new org.sqlite.JDBC());
             connection = DriverManager.getConnection(String.format("jdbc:sqlite:%s", dbName));
