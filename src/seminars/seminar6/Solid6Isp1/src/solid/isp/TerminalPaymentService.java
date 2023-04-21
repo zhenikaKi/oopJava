@@ -1,7 +1,5 @@
 package seminars.seminar6.Solid6Isp1.src.solid.isp;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 public class TerminalPaymentService implements Payable {
 
     @Override
@@ -16,6 +14,6 @@ public class TerminalPaymentService implements Payable {
 
     @Override
     public void payPhoneNumber(int amount) {
-        throw new NotImplementedException();
+        throw new RuntimeException("Не реализовано");
     }
 }
